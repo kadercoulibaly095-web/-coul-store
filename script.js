@@ -1,14 +1,15 @@
 const products=[
 {id:1,name:"Ensemble Premium",price:24900,old:32900,rating:5,img:"https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=700&q=80",category:"Femmes"},
 {id:2,name:"Sneakers Urban",price:29900,old:39900,rating:5,img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80",category:"Chaussures"},
-{id:3,name:"Sac Élégance",price:19900,old:24900,rating:4,img:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80",category:"Sacs"},
+{id:3,name:"Sac Élégance",price:25000,old:32000,rating:4,img:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=700&q=80",category:"Sacs"},
+ 
 {id:4,name:"Montre Classic",price:34900,old:44900,rating:5,img:"https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=700&q=80",category:"Accessoires"},
-{id:5,name:"Chemise Premium",price:14900,old:19900,rating:5,img:"https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=700&q=80",category:"Hommes"},
+{id:5,name:"T-shirt Essentiel",price:5000,old:7000,rating:5,img:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=700&q=80",category:"T-shirts"},
 {id:6,name:"Jean Signature",price:18900,old:23900,rating:4,img:"https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=700&q=80",category:"Hommes"},
 {id:7,name:"Robe Élégance",price:27900,old:34900,rating:5,img:"https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=700&q=80",category:"Femmes"},
 {id:8,name:"Lunettes Noir",price:12900,old:16900,rating:4,img:"https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=700&q=80",category:"Accessoires"},
-{id:9,name:"Veste Signature",price:38900,old:49900,rating:5,img:"https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=700&q=80",category:"Hommes"},
-{id:10,name:"Sac Mini Chic",price:16900,old:21900,rating:5,img:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=80",category:"Sacs"},
+{id:9,name:"Veste Signature",price:38900,old:49900,rating:5,img:"https:splash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=700&q=80",category:"Hommes"},
+{id:10,name:"Sac Mini Chic",price:25000,old:30000,rating:5,img:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=80",category:"Sacs"},
 {id:11,name:"Sneakers Cream",price:31900,old:39900,rating:5,img:"https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=700&q=80",category:"Chaussures"},
 {id:12,name:"Top Satin",price:15900,old:20900,rating:4,img:"https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=700&q=80",category:"Femmes"}
 ];
