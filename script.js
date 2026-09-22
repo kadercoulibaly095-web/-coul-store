@@ -451,6 +451,7 @@ document.getElementById("checkoutBtn").onclick=()=>{
 let reviewIndex=0;
 
 const reviews=[
+ 
 
  [
   "Aïcha",
@@ -578,3 +579,33 @@ showReview();
 render();
 
 renderCart();
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('sellerForm');
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const boutique = document.getElementById('sellerShop').value;
+    const nom = document.getElementById('sellerName').value;
+    const whatsapp = document.getElementById('sellerPhone').value;
+    const email = document.getElementById('sellerEmail').value;
+    const categorie = document.getElementById('sellerCategory').value;
+    const formule = document.getElementById('sellerPlan').value;
+    const description = document.getElementById('sellerDescription').value;
+
+    const votreNumero = '2250584151920'; // VOTRE numéro WhatsApp (indicatif pays + numéro, sans + ni espace)
+
+    const message = `Nouvelle demande vendeur COUL STORE :
+Boutique : ${boutique}
+Nom : ${nom}
+WhatsApp : ${whatsapp}
+Email : ${email || 'Non renseigné'}
+Catégorie : ${categorie}
+Formule : ${formule}
+Description : ${description || 'Aucune'}`;
+
+    const url = `https://wa.me/${votreNumero}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  });
+});
