@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="COUL_STORE — boutique mode et lifestyle en ligne.">
+  <title>COUL_STORE — Mode & Lifestyle</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Application (PWA) -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#3B0F1A">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="COUL STORE">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+  <!-- BANDEAU DÉFILANT -->
+  <div class="announcement" id="announcement">
+    <div class="marquee">
+      <div class="marquee-track">
+        <span>🚚 Livraison gratuite dès 25 000 FCFA • 🔥 Jusqu'à -20% sur une sélection</span>
+        <span>🚚 Livraison gratuite dès 25 000 FCFA • 🔥 Jusqu'à -20% sur une sélection</span>
+        <span>🚚 Livraison gratuite dès 25 000 FCFA • 🔥 Jusqu'à -20% sur une sélection</span>
+        <span>🚚 Livraison gratuite dès 25 000 FCFA • 🔥 Jusqu'à -20% sur une sélection</span>
+      </div>
+    </div>
+    <button id="closeAnnouncement" aria-label="Fermer">×</button>
+  </div>
+
+  <header class="header">
+
+    <a class="logo" href="#accueil">COUL<span>STORE</span></a>
+
+    <nav class="desktop-nav">
+      <a href="#accueil">Accueil</a>
+      <a href="#boutique">Boutique</a>
+      <a href="#nouveautes">Nouveautés</a>
+      <a href="#promotions">Promotions</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn search-toggle" aria-label="Recherche">⌕</button>
+      <button class="icon-btn" id="wishlistBtn" aria-label="Favoris">♡<b id="wishlistCount">0</b></button>
+      <button class="icon-btn" id="cartBtn" aria-label="Panier">🛒<b id="cartCount">0</b></button>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    </div>
+
+  </header>
+
+
+  <div class="search-panel" id="searchPanel">
+    <div class="search-inner">
+      <input id="searchInput" type="search" placeholder="Rechercher un produit...">
+      <button id="clearSearch">×</button>
+    </div>
+    <div id="searchResults" class="search-results"></div>
+  </div>
+
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#accueil">Accueil</a>
+    <a href="#boutique">Boutique</a>
+    <a href="#nouveautes">Nouveautés</a>
+    <a href="#promotions">Promotions</a>
+    <a href="#contact">Contact</a>
+    <button class="install-btn" hidden>📲 Installer l'application</button>
+  </div>
+
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="accueil">
+
+      <div class="hero-content">
+
+        <p class="eyebrow">NOUVELLE COLLECTION 2026</p>
+
+        <h1>Stylez<br><em>votre monde.</em></h1>
+
+        <p>
+          Découvrez une sélection pensée pour celles et ceux qui veulent
+          allier style, qualité et élégance.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#boutique" class="btn btn-dark">Découvrir la collection</a>
+          <a href="#promotions" class="btn btn-light">Voir les promotions</a>
+        </div>
+
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="images/vitrine.jpg"
+          alt="Collection mode"
+        >
+      </div>
+
+    </section>
+
+
+    <!-- CATEGORIES : chaque carte filtre les produits (data-cat) -->
+    <section class="section" id="boutique">
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">EXPLORER</p>
+          <h2>Shop par catégorie</h2>
+        </div>
+
+        <a href="#produits" class="text-link" data-cat="Tous">Tout voir →</a>
+      </div>
+
+      <div class="category-grid">
+
+        <a class="category-card" href="#produits" data-cat="Hommes">
+          <img src="images/homme (1).jpg" alt="Hommes">
+          <span>Hommes</span>
+        </a>
+
+        <a class="category-card" href="#produits" data-cat="Femmes">
+          <img src="images/femme.jpg" alt="Femmes">
+          <span>Femmes</span>
+        </a>
+
+        <a class="category-card" href="#produits" data-cat="Chaussures">
+          <img src="images/nocta chossure.jpg" alt="Chaussures">
+          <span>Chaussures</span>
+        </a>
+
+        <a class="category-card" href="#produits" data-cat="Sacs">
+          <img src="images/essential.jpg" alt="Sacs">
+          <span>Sacs</span>
+        </a>
+
+        <a class="category-card" href="#produits" data-cat="Accessoires">
+          <img src="images/accesoires.jpg" alt="Accessoires">
+          <span>Accessoires</span>
+        </a>
+
+        <a class="category-card" href="#nouveautes">
+          <img src="images/arrivage.jpg" alt="Nouveautés">
+          <span>Nouveautés</span>
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- PRODUITS -->
+    <section class="section products-section" id="produits">
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" id="productsEyebrow">NOS FAVORIS</p>
+          <h2 id="productsTitle">Les plus populaires</h2>
+        </div>
+
+        <button class="text-link" id="viewAll">Voir tous les produits →</button>
+      </div>
+
+      <div class="filters" id="filters">
+        <button class="filter-btn active" data-cat="Tous">Tous</button>
+        <button class="filter-btn" data-cat="Hommes">Hommes</button>
+        <button class="filter-btn" data-cat="Femmes">Femmes</button>
+        <button class="filter-btn" data-cat="Chaussures">Chaussures</button>
+        <button class="filter-btn" data-cat="Sacs">Sacs</button>
+        <button class="filter-btn" data-cat="Accessoires">Accessoires</button>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+
+    </section>
+
+
+    <!-- PROMOTION -->
+    <section class="promo" id="promotions">
+
+      <div>
+
+        <p class="eyebrow">OFFRE LIMITÉE</p>
+
+        <h2>Jusqu'à <strong>-20%</strong></h2>
+
+        <p>Profitez de nos offres exceptionnelles pendant une durée limitée.</p>
+
+        <div class="countdown">
+          <div><b id="days">00</b><small>JOURS</small></div>
+          <div><b id="hours">00</b><small>HEURES</small></div>
+          <div><b id="minutes">00</b><small>MIN</small></div>
+          <div><b id="seconds">00</b><small>SEC</small></div>
+        </div>
+
+        <a href="#produits" class="btn btn-light">Shopper les promotions</a>
+
+      </div>
+
+      <img src="images/offre.jpg" alt="Promotion mode">
+
+    </section>
+
+
+    <!-- NOUVEAUTES -->
+    <section class="section" id="nouveautes">
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">nouvelle sortie</p>
+          <h2>✨ Nouveautés</h2>
+        </div>
+
+        <a href="#produits" class="text-link" data-cat="Tous">Shopper les nouveautés →</a>
+      </div>
+
+      <div class="product-grid" id="newGrid"></div>
+
+    </section>
+
+
+    <!-- AVANTAGES -->
+    <section class="values">
+
+      <div class="value">
+        <span>🚚</span>
+        <div>
+          <h3>Livraison rapide</h3>
+          <p>Recevez vos commandes partout en Côte d'Ivoire en moins de temps.</p>
+        </div>
+      </div>
+
+      <div class="value">
+        <span>↩️</span>
+        <div>
+          <h3>Retours faciles</h3>
+          <p>Un processus simple pour vos retours.</p>
+        </div>
+      </div>
+
+      <div class="value">
+        <span>🔒</span>
+        <div>
+          <h3>Paiement sécurisé</h3>
+          <p>Vos paiements sont protégés et fiables.</p>
+        </div>
+      </div>
+
+      <div class="value">
+        <span>💬</span>
+        <div>
+          <h3>Support 24H/24 7j/7</h3>
+          <p>Notre équipe est là pour vous aider.</p>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- AVIS -->
+    <section class="reviews section">
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">ILS NOUS FONT CONFIANCE</p>
+          <h2>Ce que disent nos clients</h2>
+        </div>
+      </div>
+
+      <div class="review-wrap">
+        <button class="slider-btn" id="prevReview">‹</button>
+        <div class="review-card" id="reviewCard"></div>
+        <button class="slider-btn" id="nextReview">›</button>
+      </div>
+
+    </section>
+
+
+    <!-- CHAÎNE WHATSAPP -->
+    <section class="cercle">
+
+      <p class="cercle-petit">LE CERCLE COUL STORE</p>
+
+      <h2>Soyez les premiers informés</h2>
+
+      <p class="cercle-texte">
+        Nouveautés, offres privées et pièces en quantités limitées,
+        directement sur notre chaîne WhatsApp.
+      </p>
+
+      <a class="cercle-bouton"
+         href="https://whatsapp.com/channel/0029VbEPAIL0wajoQTa06O0e"
+         target="_blank" rel="noopener">
+        REJOINDRE LA CHAÎNE WHATSAPP
+      </a>
+
+      <p class="cercle-note">🔒 Gratuit. Votre numéro reste confidentiel.</p>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer id="contact">
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+
+        <a class="logo" href="#accueil">COUL<span>STORE</span></a>
+
+        <p>Votre destination pour un style moderne, élégant et accessible.</p>
+
+        <div class="socials">
+          <a href="#">f</a>
+          <a href="#">◎</a>
+          <a href="#">♪</a>
+          <a href="https://wa.me/2250584151920" target="_blank" aria-label="WhatsApp"><svg class="wa-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+        </div>
+
+        <button class="install-btn" hidden>📲 Installer l'application</button>
+
+      </div>
+
+
+      <div>
+        <h4>BOUTIQUE</h4>
+        <a href="#produits" data-cat="Hommes">Hommes</a>
+        <a href="#produits" data-cat="Femmes">Femmes</a>
+        <a href="#produits" data-cat="Chaussures">Chaussures</a>
+        <a href="#produits" data-cat="Sacs">Sacs</a>
+        <a href="#produits" data-cat="Accessoires">Accessoires</a>
+        <a href="#nouveautes">Nouveautés</a>
+        <a href="#promotions">Promotions</a>
+      </div>
+
+
+      <div>
+        <h4>SERVICE CLIENT</h4>
+        <a href="#contact">Contact</a>
+        <a href="#">Livraison</a>
+        <a href="#">Retours</a>
+        <a href="#">FAQ</a>
+        <a href="#">Conditions générales</a>
+      </div>
+
+
+      <div>
+        <h4>À PROPOS</h4>
+        <a href="#">Notre histoire</a>
+        <a href="#">Nos valeurs</a>
+        <a href="#">Confidentialité</a>
+
+        <p class="payment">
+          Wave • Orange Money • MTN Money<br>
+          Visa • Mastercard
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+      <span>©️ 2026 COUL_STORE — Tous droits réservés.</span>
+      <span>Abidjan, Côte d'Ivoire</span>
+    </div>
+
+  </footer>
+
+
+  <!-- PANIER -->
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="cart-drawer" id="cartDrawer">
+
+    <div class="drawer-head">
+      <h2>Votre panier</h2>
+      <button id="closeCart">×</button>
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-footer">
+      <div>
+        <span>Sous-total</span>
+        <strong id="cartTotal">0 FCFA</strong>
+      </div>
+
+      <button class="btn btn-dark checkout" id="checkoutBtn">Passer la commande</button>
+    </div>
+
+  </aside>
+
+
+  <!-- MODAL PRODUIT (plein écran) -->
+  <div class="modal" id="productModal">
+    <div class="modal-box">
+      <button class="modal-close" id="closeModal">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+
+  <!-- WHATSAPP -->
+  <a
+    class="whatsapp"
+    href="https://wa.me/2250584151920?text=Bonjour%20COUL%20STORE%2C%20je%20voudrais%20avoir%20des%20informations%20sur%20vos%20produits."
+    target="_blank"
+    aria-label="WhatsApp"
+  ><svg class="wa-icon" viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+
+
+  <div class="toast" id="toast"></div>
+
+
+  <script src="app.js"></script>
+
+</body>
+</html>
