@@ -1459,3 +1459,9 @@ footer {
   background: #C8A96B;
   border-radius: 3px;
 }
+.tailles { margin: 16px 0; }
+.taille {
+  min-width: 48px; padding: 10px 14px; margin: 0 8px 8px 0;
+  border: 1px solid #3b1220; background: #fff; color: #3b1220;
+}
+.taille.active { background: #5e2f3c; color: #fff; }
