@@ -10,14 +10,32 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
+  <!-- Application (PWA) -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#3B0F1A">
+  <link rel="icon" type="image/png" href="logo/icon-192.png">
+  <link rel="apple-touch-icon" href="logo/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="COUL STORE">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
- 
+
+  <!-- BANDEAU DÉFILANT -->
   <div class="announcement" id="announcement">
-    <span>🚚 Livraison gratuite dès 25 000 FCFA • 🔥 Jusqu'à -20% sur une sélection</span>
+    <div class="marquee">
+      <div class="marquee-track">
+        <span>🚚 Livraison gratuite dès 25 000 FCFA • 🔥 Jusqu'à -20% sur une sélection</span>
+        <span>🚚 Livraison gratuite dès 25 000 FCFA • 🔥 Jusqu'à -20% sur une sélection</span>
+        <span>🚚 Livraison gratuite dès 25 000 FCFA • 🔥 Jusqu'à -20% sur une sélection</span>
+        <span>🚚 Livraison gratuite dès 25 000 FCFA • 🔥 Jusqu'à -20% sur une sélection</span>
+      </div>
+    </div>
     <button id="closeAnnouncement" aria-label="Fermer">×</button>
   </div>
 
@@ -58,6 +76,7 @@
     <a href="#nouveautes">Nouveautés</a>
     <a href="#promotions">Promotions</a>
     <a href="#contact">Contact</a>
+    <button class="install-btn" hidden>📲 Installer l'application</button>
   </div>
 
 
@@ -270,28 +289,25 @@
     </section>
 
 
-    <!-- NEWSLETTER -->
-    <section class="newsletter">
+    <!-- CHAÎNE WHATSAPP -->
+    <section class="cercle">
 
-      <div>
-        <p class="eyebrow">RESTONS CONNECTÉS</p>
-        <h2>Rejoignez l'équipe de  COUL_STORE</h2>
-        <p>
-          Inscrivez-vous et recevez <strong>-10% de remise</strong>
-          sur votre première commande.
-        </p>
-      </div>
+      <p class="cercle-petit">LE CERCLE COUL STORE</p>
 
-      <form id="newsletterForm">
+      <h2>Soyez les premiers informés</h2>
 
-        <div class="email-box">
-          <input id="emailInput" type="email" placeholder="Votre adresse e-mail" required>
-          <button type="submit">S'inscrire</button>
-        </div>
+      <p class="cercle-texte">
+        Nouveautés, offres privées et pièces en quantités limitées,
+        directement sur notre chaîne WhatsApp.
+      </p>
 
-        <small>🔒 Vos données restent confidentielles. Aucun spam.</small>
+      <a class="cercle-bouton"
+         href="https://whatsapp.com/channel/0029VbEPAIL0wajoQTa06O0e"
+         target="_blank" rel="noopener">
+        REJOINDRE LA CHAÎNE WHATSAPP
+      </a>
 
-      </form>
+      <p class="cercle-note">🔒 Gratuit. Votre numéro reste confidentiel.</p>
 
     </section>
 
@@ -313,8 +329,10 @@
           <a href="#">f</a>
           <a href="#">◎</a>
           <a href="#">♪</a>
-          <a href="https://wa.me/2250584151920" target="_blank">◉</a>
+          <a href="https://wa.me/2250584151920" target="_blank" aria-label="WhatsApp"><svg class="wa-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
         </div>
+
+        <button class="install-btn" hidden>📲 Installer l'application</button>
 
       </div>
 
@@ -357,7 +375,7 @@
 
 
     <div class="footer-bottom">
-      <span>© 2026 COUL_STORE — Tous droits réservés.</span>
+      <span>©️ 2026 COUL_STORE — Tous droits réservés.</span>
       <span>Abidjan, Côte d'Ivoire</span>
     </div>
 
@@ -388,7 +406,7 @@
   </aside>
 
 
-  <!-- MODAL PRODUIT -->
+  <!-- MODAL PRODUIT (plein écran) -->
   <div class="modal" id="productModal">
     <div class="modal-box">
       <button class="modal-close" id="closeModal">×</button>
@@ -403,7 +421,7 @@
     href="https://wa.me/2250584151920?text=Bonjour%20COUL%20STORE%2C%20je%20voudrais%20avoir%20des%20informations%20sur%20vos%20produits."
     target="_blank"
     aria-label="WhatsApp"
-  >◉</a>
+  ><svg class="wa-icon" viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
 
 
   <div class="toast" id="toast"></div>
