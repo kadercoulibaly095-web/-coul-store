@@ -27,7 +27,7 @@ input {
 
 
 /* =========================================
-   BARRE D'ANNONCE
+   BARRE D'ANNONCE (BANDEAU DÉFILANT)
 ========================================= */
 
 .announcement {
@@ -35,17 +35,41 @@ input {
   background: #3B0F1A;
   color: #FFFFFF;
   display: flex;
-  justify-content: center;
   align-items: center;
   font-size: 12px;
   letter-spacing: 0.2px;
   position: relative;
+  overflow: hidden;
+}
+
+.marquee {
+  flex: 1;
+  overflow: hidden;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: defile 28s linear infinite;
+}
+
+.marquee-track span {
+  white-space: nowrap;
+  padding-right: 60px;
+}
+
+@keyframes defile {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
 .announcement button {
   position: absolute;
-  right: 18px;
-  background: none;
+  right: 0;
+  top: 0;
+  height: 100%;
+  padding: 0 16px;
+  background: #3B0F1A;
   border: 0;
   color: #FFFFFF;
   font-size: 20px;
@@ -701,69 +725,55 @@ input {
 
 
 /* =========================================
-   NEWSLETTER
+   CHAÎNE WHATSAPP (LE CERCLE)
 ========================================= */
 
-.newsletter {
+.cercle {
   margin: 0 5% 80px;
-  padding: 65px 7%;
+  padding: 60px 7%;
   background: #3B0F1A;
-  color: #FFFFFF;
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  align-items: center;
+  text-align: center;
 }
 
-.newsletter h2 {
+.cercle-petit {
+  color: #C8A96B;
+  letter-spacing: 4px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cercle h2 {
   font: 600 clamp(30px, 4vw, 45px) "Playfair Display", serif;
   color: #FFFFFF;
+  margin: 14px 0;
 }
 
-.newsletter p:not(.eyebrow) {
-  margin-top: 10px;
+.cercle-texte {
   color: #E6D8DA;
+  max-width: 520px;
+  margin: 0 auto 28px;
+  line-height: 1.6;
 }
 
-.newsletter strong {
-  color: #C8A96B;
-}
-
-.email-box {
-  display: flex;
-  background: #FFFFFF;
-  border: 1px solid #C8A96B;
-  min-width: 430px;
-}
-
-.email-box input {
-  border: 0;
-  outline: 0;
-  padding: 15px;
-  flex: 1;
-  color: #1A1214;
-}
-
-.email-box button {
+.cercle-bouton {
+  display: inline-block;
   background: #C8A96B;
   color: #1A1214;
-  border: 0;
-  padding: 0 20px;
-  text-transform: uppercase;
-  font-size: 10px;
   font-weight: 700;
-  cursor: pointer;
+  font-size: 12px;
+  letter-spacing: 1px;
+  padding: 18px 32px;
+  transition: 0.25s;
 }
 
-.email-box button:hover {
+.cercle-bouton:hover {
   background: #FFFFFF;
 }
 
-.newsletter form small {
-  display: block;
-  margin-top: 8px;
+.cercle-note {
   color: #CDB9BD;
-  font-size: 10px;
+  font-size: 12px;
+  margin-top: 14px;
 }
 
 
@@ -898,8 +908,7 @@ footer {
   padding-bottom: 18px;
 }
 
-.drawer-head button,
-.modal-close {
+.drawer-head button {
   border: 0;
   background: none;
   font-size: 28px;
@@ -971,49 +980,61 @@ footer {
 
 
 /* =========================================
-   MODAL PRODUIT
+   MODAL PRODUIT (PLEIN ÉCRAN)
 ========================================= */
 
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(26, 18, 20, 0.75);
+  background: #FFFFFF;
   z-index: 100;
   display: none;
-  place-items: center;
-  padding: 20px;
 }
 
 .modal.show {
-  display: grid;
+  display: block;
 }
 
 .modal-box {
   background: #FFFFFF;
-  width: min(900px, 100%);
-  max-height: 90vh;
-  overflow: auto;
+  width: 100%;
+  height: 100dvh;
+  overflow-y: auto;
   position: relative;
-  padding: 35px;
+  padding: 80px 5% 50px;
 }
 
 .modal-close {
-  position: absolute;
-  right: 15px;
-  top: 8px;
-  z-index: 2;
+  position: fixed;
+  right: 14px;
+  top: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 0;
+  background: #3B0F1A;
+  color: #FFFFFF;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 110;
 }
 
 .modal-product {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 35px;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: start;
 }
 
 .modal-product img {
   width: 100%;
-  height: 500px;
-  object-fit: cover;
+  height: auto;
+  max-height: 75dvh;
+  object-fit: contain;
+  background: #F0E9E0;
 }
 
 .modal-product h2 {
@@ -1130,9 +1151,7 @@ footer {
 @media (max-width: 700px) {
 
   .announcement {
-    font-size: 10px;
-    padding: 0 35px 0 12px;
-    text-align: center;
+    font-size: 11px;
   }
 
   .header {
@@ -1249,20 +1268,14 @@ footer {
     padding: 40px 5%;
   }
 
-  .newsletter {
+  .cercle {
     margin: 0 5% 50px;
+    padding: 45px 6%;
+  }
+
+  .cercle-bouton {
     display: block;
-    padding: 45px 7%;
-  }
-
-  .email-box {
-    min-width: 0;
-    margin-top: 25px;
-  }
-
-  .email-box input {
-    min-width: 0;
-    width: 100%;
+    padding: 18px 12px;
   }
 
   .footer-top {
@@ -1280,12 +1293,21 @@ footer {
     line-height: 2;
   }
 
+  .modal-box {
+    padding: 70px 6% 40px;
+  }
+
   .modal-product {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .modal-product img {
-    height: 350px;
+    max-height: 60dvh;
+  }
+
+  .modal-product h2 {
+    font-size: 34px;
   }
 
   .search-results {
@@ -1345,23 +1367,11 @@ footer {
     font-size: 17px;
   }
 
-  .email-box {
-    display: block;
-    background: transparent;
-    border: 0;
-  }
-
-  .email-box input,
-  .email-box button {
-    width: 100%;
-    height: 48px;
-    margin-top: 7px;
-  }
-
   .footer-top {
     grid-template-columns: 1fr;
   }
-}    
+}
+
 
 /* =========================================
    FILTRES PAR CATÉGORIE
@@ -1459,9 +1469,77 @@ footer {
   background: #C8A96B;
   border-radius: 3px;
 }
-.tailles { margin: 16px 0; }
-.taille {
-  min-width: 48px; padding: 10px 14px; margin: 0 8px 8px 0;
-  border: 1px solid #3b1220; background: #fff; color: #3b1220;
+
+
+/* =========================================
+   TAILLES (FICHE PRODUIT)
+========================================= */
+
+.tailles {
+  margin: 16px 0 22px;
 }
-.taille.active { background: #5e2f3c; color: #fff; }
+
+.tailles p {
+  margin: 0 0 10px;
+  color: #3B0F1A;
+}
+
+.taille {
+  min-width: 48px;
+  padding: 10px 14px;
+  margin: 0 8px 8px 0;
+  border: 1px solid #3B0F1A;
+  background: #FFFFFF;
+  color: #3B0F1A;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.taille:hover {
+  border-color: #C8A96B;
+}
+
+.taille.active {
+  background: #5E2F3C;
+  border-color: #5E2F3C;
+  color: #FFFFFF;
+}
+
+
+/* =========================================
+   BOUTON "INSTALLER L'APPLICATION"
+========================================= */
+
+.install-btn {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 12px 20px;
+  background: #C8A96B;
+  color: #1A1214;
+  border: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.install-btn:hover {
+  background: #FFFFFF;
+}
+
+.install-btn[hidden] {
+  display: none;
+}
+
+.mobile-menu .install-btn {
+  margin-top: 18px;
+  width: 100%;
+}
+
+
+/* Icône WhatsApp */
+.wa-icon {
+  display: block;
+}
