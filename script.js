@@ -611,6 +611,14 @@ function countdown() {
   document.getElementById("minutes").textContent = String(m).padStart(2, "0");
   document.getElementById("seconds").textContent = String(s).padStart(2, "0");
 }
+let tailleChoisie = null;
+document.querySelectorAll('.taille').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.taille').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    tailleChoisie = btn.textContent;
+  });
+});
 
 setInterval(countdown, 1000);
 
